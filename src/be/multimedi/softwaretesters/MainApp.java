@@ -1,7 +1,9 @@
 package be.multimedi.softwaretesters;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Yannick Van Ham
@@ -23,5 +25,19 @@ public class MainApp {
                 System.out.println(restaurant.getCuisine());
             }
         }
+
+
+        Map<String, Restaurant> restaurantMap = new HashMap<>();
+
+        restaurantMap.put("Le Marmiton", new Restaurant("Le Marmiton", "French"));
+        restaurantMap.put("Yummy Bowl", new Restaurant("Yummy Bowl", "Korean"));
+        restaurantMap.put("Los Ponchos", new Restaurant("Los Ponchos", "Mexican"));
+        restaurantMap.put("Chana", new Restaurant("Chana", "Israeli"));
+
+        nameToSearch = "Los Ponchos";
+
+        Restaurant foundRestaurant = restaurantMap.get(nameToSearch);
+
+        System.out.println(foundRestaurant.getCuisine());
     }
 }
